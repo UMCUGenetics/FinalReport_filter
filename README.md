@@ -11,9 +11,9 @@ deactivate
 ```
 
 ### Make Windows executable 
-Run pyinstaller to convert .py to Windows executable (.exe).\ 
+Run pyinstaller to convert .py to Windows executable (.exe).\
 Note: this must be done a Windows machine (i.e. the SNP-array_data_cruncher Windows)\
-Pyinstaller on SNP-array_data_cruncher has been tested using python v3.7.9 (32bit)\
+Pyinstaller on SNP-array_data_cruncher has been tested using python v3.7.9 (32bit)
 ```bash
 python
 pip install pyinstaller
