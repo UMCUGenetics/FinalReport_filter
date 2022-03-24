@@ -32,7 +32,7 @@ def slice_file(input_file, chromosomes):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_file', help='Full path to input file (Final report)')
+    parser.add_argument('--input_file', help='Full path to input file (must be a FinalReport.txt file)')
     parser.add_argument(
         '--chromosomes',
         default="13,18,21,X,Y,XY",
