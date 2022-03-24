@@ -17,6 +17,6 @@ Pyinstaller on SNP-array_data_cruncher has been tested using python v3.7.9 (32bi
 ```bash
 python
 pip install pyinstaller
-pyinstaller --onefile slice_snparray.py
+pyinstaller --onefile filter_finalreport.py
 ```
 Executable can be found in folder dist
