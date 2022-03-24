@@ -11,12 +11,12 @@ deactivate
 ```
 
 ### Make Windows executable 
-# Run pyinstaller to convert .py to Windows executable (.exe). Note: this must be done a Windows machine.
-# Pyinstaller was run on the SNP-array_data_cruncher server using python v3.7.9 (32bit)
-# https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe
+Run pyinstaller to convert .py to Windows executable (.exe). 
+Note: this must be done a Windows machine (i.e. the SNP-array_data_cruncher Windows)
+Pyinstaller on SNP-array_data_cruncher has been tested using python v3.7.9 (32bit)
 ```bash
 python
 pip install pyinstaller
 pyinstaller --onefile slice_snparray.py
 ```
-## Executable can be found in folder dist
+Executable can be found in folder dist
