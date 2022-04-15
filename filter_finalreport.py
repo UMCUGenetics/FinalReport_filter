@@ -5,29 +5,28 @@ import glob
 
 
 def slice_file(input_file, chromosomes):
-    write_file = open("{}_sliced.txt".format(input_file[:-4]), "w")
     input_lines = open(input_file, "r")
     chrom_list = chromosomes.split(",")
 
-    """ Write all lines until Data section """
-    line = input_lines.readline()
-    while line.rstrip() != '[Data]':
-        write_file.write(line)
+    with open("{}_filtered.txt".format(input_file[:-4]), "w") as write_file:
+
+        #  Write all lines until Data section
         line = input_lines.readline()
-    write_file.write(line)  # Print [Data] line
-
-    """ Index header line for chromosome column, and write header"""
-    header = input_lines.readline()
-    chromosome_index = header.split("\t").index("Chr")
-    write_file.write(header)
-
-    """ Write all variant lines are on chromosomes of interest"""
-    for line in input_lines:
-        splitline = line.rstrip().split("\t")
-        if splitline[chromosome_index] in chrom_list:
+        while line.rstrip() != '[Data]':
             write_file.write(line)
+            line = input_lines.readline()
+        write_file.write(line)  # Print [Data] line
 
-    write_file.close()
+        #  Index header line for chromosome column, and write header
+        header = input_lines.readline()
+        chromosome_index = header.split("\t").index("Chr")
+        write_file.write(header)
+
+        #  Write all variant lines are on chromosomes of interest
+        for line in input_lines:
+            splitline = line.rstrip().split("\t")
+            if splitline[chromosome_index] in chrom_list:
+                write_file.write(line)
 
 
 if __name__ == "__main__":
